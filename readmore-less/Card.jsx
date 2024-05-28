@@ -1,10 +1,8 @@
-// Read More/Less functionality in Cards
-
-
 import React, { useState } from "react";
 import "./Card.css";
 
-const Card = () => {
+const Card = ({ title = "Some Title" }) => {
+  // if no title(props) is passed "Some Title" will be displayed
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleToggle = () => {
@@ -14,7 +12,7 @@ const Card = () => {
   return (
     <div className="card">
       <div className="content">
-        <h3>Card</h3>
+        <h3>{title}</h3>
         <div className="paragraph-container">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni,
